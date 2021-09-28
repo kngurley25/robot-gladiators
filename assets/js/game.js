@@ -1,5 +1,11 @@
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
+
+// check to see if the value of the player health variable is greater than 0
+if (playerHealth > 0) {
+    console.log("Your player is still alive!")
+}
+
 var playerAttack = 10;
 
 console.log(playerName, playerAttack, playerHealth);
@@ -20,6 +26,14 @@ var fight = function() {
         playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
 
+    // check enemy's health
+    if (enemyHealth <= 0) {
+        window.alert(enemyName + " has died!");
+    }
+    else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    }
+
     // subtract the value of enemy attack from the value of player health and use that result to update the value in the player health variable
     playerHealth = playerHealth - enemyAttack;
 
@@ -27,6 +41,14 @@ var fight = function() {
     console.log(
         enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
     );
+
+    // check player's health
+    if (playerHealth <=0) {
+        window.alert(playerName + " has died!");
+    }
+    else {
+        window.alert(playerName + " still has " + playerHealth + " health left.");
+    }
 
 };
 
